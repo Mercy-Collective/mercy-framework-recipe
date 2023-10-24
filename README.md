@@ -12,10 +12,11 @@ Official txAdmin Recipe for the Mercy Framework
 8. Click on "Run Recipe".
 9. The Mercy Framework will now start installing.
 10. When the installation has finished you'll see the server.cfg, be sure to add a Steam Web API key and change other settings to your likings. 
-11. And last but not least, make sure to do following things before joining the server:
+11. Make sure to do following things before joining the server:
     - txAdmin FXServer Settings (Parameters): `+set sv_enforceGameBuild 2944`
     - txAdmin FXServer Settings (OneSync): Set onesync on legacy or infinity
-12. Enjoy!
+12. And last but not least, be sure to download the [assets here](https://drive.google.com/file/d/14bykYwyLer-ET1Gh33b_WyE83khmrypw/view?usp=share_link).
+13. Enjoy!
 
 # Support
 Need help? 
