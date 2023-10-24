@@ -1,4 +1,4 @@
-# mercy-framework-recipe
+# Mercy Framework - Recipe
 Official txAdmin Recipe for the Mercy Framework
 
 # Installation
