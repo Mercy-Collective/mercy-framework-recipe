@@ -1,18 +1,3 @@
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8 */;
-/*!50503 SET NAMES utf8mb4 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
-
--- Databasestructuur van mercy-framework wordt geschreven
-CREATE DATABASE IF NOT EXISTS `mercy-framework` /*!40100 DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci */;
-USE `mercy-framework`;
-
--- Structuur van  tabel mercy-framework.bans wordt geschreven
 CREATE TABLE IF NOT EXISTS `bans` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `banid` varchar(50) DEFAULT NULL,
@@ -28,9 +13,6 @@ CREATE TABLE IF NOT EXISTS `bans` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
--- Data exporteren was gedeselecteerd
-
--- Structuur van  tabel mercy-framework.hotel_rooms wordt geschreven
 CREATE TABLE IF NOT EXISTS `hotel_rooms` (
   `RoomId` int(11) DEFAULT NULL,
   `RoomInfo` text DEFAULT NULL,
@@ -63,9 +45,6 @@ INSERT INTO `hotel_rooms` (`RoomId`, `RoomInfo`, `Available`) VALUES
 	(523, 'Room-523', 1),
 	(524, 'Room-524', 1);
 
--- Data exporteren was gedeselecteerd
-
--- Structuur van  tabel mercy-framework.logs wordt geschreven
 CREATE TABLE IF NOT EXISTS `logs` (
   `Type` text DEFAULT NULL,
   `Steam` varchar(255) DEFAULT NULL,
@@ -75,9 +54,6 @@ CREATE TABLE IF NOT EXISTS `logs` (
   `Data` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Data exporteren was gedeselecteerd
-
--- Structuur van  tabel mercy-framework.mdw_announcements wordt geschreven
 CREATE TABLE IF NOT EXISTS `mdw_announcements` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` text DEFAULT NULL,
@@ -86,9 +62,6 @@ CREATE TABLE IF NOT EXISTS `mdw_announcements` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Data exporteren was gedeselecteerd
-
--- Structuur van  tabel mercy-framework.mdw_evidences wordt geschreven
 CREATE TABLE IF NOT EXISTS `mdw_evidences` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(50) DEFAULT NULL,
@@ -100,9 +73,6 @@ CREATE TABLE IF NOT EXISTS `mdw_evidences` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=514592 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Data exporteren was gedeselecteerd
-
--- Structuur van  tabel mercy-framework.mdw_legislation wordt geschreven
 CREATE TABLE IF NOT EXISTS `mdw_legislation` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` text DEFAULT NULL,
@@ -111,9 +81,6 @@ CREATE TABLE IF NOT EXISTS `mdw_legislation` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Data exporteren was gedeselecteerd
-
--- Structuur van  tabel mercy-framework.mdw_profiles wordt geschreven
 CREATE TABLE IF NOT EXISTS `mdw_profiles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `citizenid` varchar(50) DEFAULT NULL,
@@ -128,9 +95,6 @@ CREATE TABLE IF NOT EXISTS `mdw_profiles` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Data exporteren was gedeselecteerd
-
--- Structuur van  tabel mercy-framework.mdw_reports wordt geschreven
 CREATE TABLE IF NOT EXISTS `mdw_reports` (
   `report` int(11) NOT NULL AUTO_INCREMENT,
   `id` varchar(50) DEFAULT NULL,
@@ -146,9 +110,6 @@ CREATE TABLE IF NOT EXISTS `mdw_reports` (
   PRIMARY KEY (`report`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Data exporteren was gedeselecteerd
-
--- Structuur van  tabel mercy-framework.mdw_staff wordt geschreven
 CREATE TABLE IF NOT EXISTS `mdw_staff` (
   `id` int(11) DEFAULT NULL,
   `citizenid` varchar(50) DEFAULT NULL,
@@ -162,9 +123,6 @@ CREATE TABLE IF NOT EXISTS `mdw_staff` (
   `created` bigint(20) DEFAULT floor(unix_timestamp(current_timestamp(3)) * 1000)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Data exporteren was gedeselecteerd
-
--- Structuur van  tabel mercy-framework.mdw_warrants wordt geschreven
 CREATE TABLE IF NOT EXISTS `mdw_warrants` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
@@ -174,9 +132,6 @@ CREATE TABLE IF NOT EXISTS `mdw_warrants` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Data exporteren was gedeselecteerd
-
--- Structuur van  tabel mercy-framework.players wordt geschreven
 CREATE TABLE IF NOT EXISTS `players` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `Cid` int(11) DEFAULT NULL,
@@ -196,9 +151,6 @@ CREATE TABLE IF NOT EXISTS `players` (
   KEY `citizenid` (`CitizenId`) USING BTREE
 ) ENGINE=MyISAM AUTO_INCREMENT=4161 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Data exporteren was gedeselecteerd
-
--- Structuur van  tabel mercy-framework.player_accounts wordt geschreven
 CREATE TABLE IF NOT EXISTS `player_accounts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `CitizenId` varchar(50) DEFAULT NULL,
@@ -213,9 +165,6 @@ CREATE TABLE IF NOT EXISTS `player_accounts` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=378 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Data exporteren was gedeselecteerd
-
--- Structuur van  tabel mercy-framework.player_business wordt geschreven
 CREATE TABLE IF NOT EXISTS `player_business` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
@@ -226,9 +175,6 @@ CREATE TABLE IF NOT EXISTS `player_business` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Data exporteren was gedeselecteerd
-
--- Structuur van  tabel mercy-framework.player_houses wordt geschreven
 CREATE TABLE IF NOT EXISTS `player_houses` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `citizenid` varchar(50) DEFAULT '[]',
@@ -248,9 +194,6 @@ CREATE TABLE IF NOT EXISTS `player_houses` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=996 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Data exporteren was gedeselecteerd
-
--- Structuur van  tabel mercy-framework.player_house_plants wordt geschreven
 CREATE TABLE IF NOT EXISTS `player_house_plants` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `houseid` varchar(50) DEFAULT '11111',
@@ -258,9 +201,6 @@ CREATE TABLE IF NOT EXISTS `player_house_plants` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=60 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Data exporteren was gedeselecteerd
-
--- Structuur van  tabel mercy-framework.player_inventory-stash wordt geschreven
 CREATE TABLE IF NOT EXISTS `player_inventory-stash` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `stash` varchar(50) NOT NULL,
@@ -268,9 +208,6 @@ CREATE TABLE IF NOT EXISTS `player_inventory-stash` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5112 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Data exporteren was gedeselecteerd
-
--- Structuur van  tabel mercy-framework.player_inventory-vehicle wordt geschreven
 CREATE TABLE IF NOT EXISTS `player_inventory-vehicle` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `plate` varchar(50) NOT NULL,
@@ -279,9 +216,6 @@ CREATE TABLE IF NOT EXISTS `player_inventory-vehicle` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5401 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Data exporteren was gedeselecteerd
-
--- Structuur van  tabel mercy-framework.player_outfits wordt geschreven
 CREATE TABLE IF NOT EXISTS `player_outfits` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `citizenid` varchar(50) DEFAULT NULL,
@@ -292,9 +226,6 @@ CREATE TABLE IF NOT EXISTS `player_outfits` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4728 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Data exporteren was gedeselecteerd
-
--- Structuur van  tabel mercy-framework.player_phone_contacts wordt geschreven
 CREATE TABLE IF NOT EXISTS `player_phone_contacts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `citizenid` varchar(50) DEFAULT NULL,
@@ -303,7 +234,6 @@ CREATE TABLE IF NOT EXISTS `player_phone_contacts` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=147 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Structuur van  tabel mercy-framework.player_phone_tweets wordt geschreven
 CREATE TABLE IF NOT EXISTS `player_phone_tweets` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `CitizenId` varchar(50) DEFAULT NULL,
@@ -314,9 +244,6 @@ CREATE TABLE IF NOT EXISTS `player_phone_tweets` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Data exporteren was gedeselecteerd
-
--- Structuur van  tabel mercy-framework.player_phone_debts wordt geschreven
 CREATE TABLE IF NOT EXISTS `player_phone_debts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `citizenid` varchar(50) DEFAULT NULL,
@@ -328,9 +255,6 @@ CREATE TABLE IF NOT EXISTS `player_phone_debts` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Data exporteren was gedeselecteerd
-
--- Structuur van  tabel mercy-framework.player_phone_documents wordt geschreven
 CREATE TABLE IF NOT EXISTS `player_phone_documents` (
   `citizenid` varchar(50) DEFAULT NULL,
   `id` int(11) DEFAULT NULL,
@@ -339,9 +263,6 @@ CREATE TABLE IF NOT EXISTS `player_phone_documents` (
   `content` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Data exporteren was gedeselecteerd
-
--- Structuur van  tabel mercy-framework.player_phone_messages wordt geschreven
 CREATE TABLE IF NOT EXISTS `player_phone_messages` (
   `citizenid` varchar(50) DEFAULT NULL,
   `name` varchar(50) DEFAULT NULL,
@@ -349,9 +270,6 @@ CREATE TABLE IF NOT EXISTS `player_phone_messages` (
   `messages` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Data exporteren was gedeselecteerd
-
--- Structuur van  tabel mercy-framework.player_skins wordt geschreven
 CREATE TABLE IF NOT EXISTS `player_skins` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `citizenid` varchar(50) NOT NULL DEFAULT '',
@@ -361,9 +279,6 @@ CREATE TABLE IF NOT EXISTS `player_skins` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=21657 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Data exporteren was gedeselecteerd
-
--- Structuur van  tabel mercy-framework.player_vehicles wordt geschreven
 CREATE TABLE IF NOT EXISTS `player_vehicles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `citizenid` varchar(50) DEFAULT NULL,
@@ -383,9 +298,6 @@ CREATE TABLE IF NOT EXISTS `player_vehicles` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4906 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Data exporteren was gedeselecteerd
-
--- Structuur van  tabel mercy-framework.player_weedplants wordt geschreven
 CREATE TABLE IF NOT EXISTS `player_weedplants` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `PlantId` int(11) DEFAULT NULL,
@@ -393,9 +305,6 @@ CREATE TABLE IF NOT EXISTS `player_weedplants` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Data exporteren was gedeselecteerd
-
--- Structuur van  tabel mercy-framework.server_bans wordt geschreven
 CREATE TABLE IF NOT EXISTS `server_bans` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
@@ -407,9 +316,6 @@ CREATE TABLE IF NOT EXISTS `server_bans` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=346 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Data exporteren was gedeselecteerd
-
--- Structuur van  tabel mercy-framework.server_cardealer wordt geschreven
 CREATE TABLE IF NOT EXISTS `server_cardealer` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `vehicle` varchar(50) DEFAULT NULL,
@@ -418,9 +324,6 @@ CREATE TABLE IF NOT EXISTS `server_cardealer` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Data exporteren was gedeselecteerd
-
--- Structuur van  tabel mercy-framework.server_lapraces wordt geschreven
 CREATE TABLE IF NOT EXISTS `server_lapraces` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
@@ -433,9 +336,6 @@ CREATE TABLE IF NOT EXISTS `server_lapraces` (
   KEY `raceid` (`raceid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Data exporteren was gedeselecteerd
-
--- Structuur van  tabel mercy-framework.server_users wordt geschreven
 CREATE TABLE IF NOT EXISTS `server_users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
@@ -447,7 +347,6 @@ CREATE TABLE IF NOT EXISTS `server_users` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=140 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Structuur van  tabel mercy-framework.server_logs wordt geschreven
 CREATE TABLE IF NOT EXISTS `server_logs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `cid` varchar(50) DEFAULT NULL,
@@ -456,11 +355,3 @@ CREATE TABLE IF NOT EXISTS `server_logs` (
   `date` bigint(255) DEFAULT floor(unix_timestamp(current_timestamp(3)) * 1000),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
--- Data exporteren was gedeselecteerd
-
-/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
