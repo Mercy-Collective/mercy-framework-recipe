@@ -1,8 +1,9 @@
-name: mercy-framework
+$engine: 3
+$onesync: on
+name: Mercy Framework
 version: 1.0.0
 author: AwayFromKane & Ice
-description: |-
-    Recipe for the base resources of the Mercy Framework
+description: An advanced framework for FiveM, highly customizable and easy to use.
 
 tasks: 
     - action: download_file
@@ -29,9 +30,18 @@ tasks:
       src: ./tmp/mercy-framework-pre/cfg
       dest: ./cfg
 
-    - action: download_file
-      url: https://raw.githubusercontent.com/Mercy-Collective/mercy-framework/main/cfg/server.cfg
-      path: ./cfg/server.cfg
+    - action: download_github
+      src: https://github.com/Mercy-Collective/mercy-framework-recipe/
+      ref: main
+      dest: ./tmp/mercy-framework-pre
+
+    - action: move_path
+      src: ./tmp/mercy-framework-pre/server.cfg
+      dest: ./server.cfg
+
+    - action: move_path
+      src: ./tmp/mercy-framework-pre/logo.png
+      dest: ./logo.png
 
     - action: connect_database
     - action: query_database
