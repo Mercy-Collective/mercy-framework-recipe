@@ -13,7 +13,7 @@ Official txAdmin Recipe for the Mercy Framework
 9. The framework will now start installing.
 10. When the framework is done installing you'll see a page to configure the server.cfg. You can just click on **"Save & Run Server"**. Changes can be done later in the other cfg's.
 11. Note: Make sure to go to the txAdmin settings and input following options in the settings of the panel:
-    - `+ set sv_enforceGameBuild 2944`
+    - `+set sv_enforceGameBuild 2944`
     - OneSync Settings: Enable onesync legacy or infinity
 12. Enjoy!
 
