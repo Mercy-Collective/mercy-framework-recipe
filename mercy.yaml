@@ -49,9 +49,6 @@ tasks:
     - action: move_path
       src: ./tmp/mercy-framework-pre/Mercy-CasinoWheelUI
       dest: ./Mercy-CasinoWheelUI/
-    # Move Starter
-    - action: move_path
-      src: ./tmp/mercy-framework-pre/[Starter].bat
-      dest: ./[Starter].bat
+    # Remove Temp Files
     - action: remove_path
       path: ./tmp
