@@ -12,9 +12,13 @@ Official txAdmin Recipe for the Mercy Framework
 8. Click on "Run Recipe".
 9. The framework will now start installing.
 10. When the framework is done installing you'll see a page to configure the server.cfg. You can just click on **"Save & Run Server"**. Changes can be done later in the other cfg's.
-11. Note: Make sure to go to the txAdmin settings and input following options in the settings of the panel:
-    - `+set sv_enforceGameBuild 2944`
-    - OneSync Settings: Enable onesync legacy or infinity
+11. Note: Make sure to do following things before joining the server:
+    - txAdmin Settings (Parameters): `+set sv_enforceGameBuild 2944`
+    - txAdmin Settings (OneSync): Enable onesync legacy or infinity
+    - mysql.cfg: Change the database connection settings.
+    - keys.cfg: Input a fivem license key and steam web api key (https://steamcommunity.com/dev/apikey)
+    - admins.cfg: Add yourself as admin.
+    - settings.cfg: Change server name and other settings.
 12. Enjoy!
 
 # Support
