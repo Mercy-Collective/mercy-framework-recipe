@@ -1,0 +1,37 @@
+name: mercy-framework
+version: 1.0.0
+author: AwayFromKane & Ice for the Mercy Framework
+description: |-
+    Recipe for the base resources of the Mercy Framework
+
+tasks: 
+    - action: download_file
+      url: https://github.com/Mercy-Collective/mercy-framework/archive/refs/tags/Pre.zip
+      path: ./tmp/mercy-framework-pre.zip
+
+    - action: unzip
+      src: ./tmp/mercy-framework-pre.zip
+      dest: ./tmp
+
+    - action: move_path
+      src: ./tmp/mercy-framework-pre/resources
+      dest: ./resources
+
+    - action: download_file
+      url: https://github.com/Mercy-Collective/mercy-framework/archive/refs/tags/Pre.zip
+      path: ./tmp/mercy-framework-pre.zip
+
+    - action: unzip
+      src: ./tmp/mercy-framework-pre.zip
+      dest: ./tmp
+
+    - action: move_path
+      src: ./tmp/mercy-framework-pre/cfg
+      dest: ./cfg
+
+    - action: download_file
+      url: https://raw.githubusercontent.com/Mercy-Collective/mercy-framework/main/cfg/server.cfg
+      path: ./server.cfg
+
+    - action: remove_path
+      path: ./tmp
