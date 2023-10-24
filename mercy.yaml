@@ -6,30 +6,7 @@ author: AwayFromKane & Ice
 description: An advanced framework for FiveM, highly customizable and easy to use.
 
 tasks: 
-    - action: download_file
-      url: https://github.com/Mercy-Collective/mercy-framework/archive/refs/tags/Pre.zip
-      path: ./tmp/mercy-framework-pre.zip
-
-    - action: unzip
-      src: ./tmp/mercy-framework-pre.zip
-      dest: ./tmp
-
-    - action: move_path
-      src: ./tmp/mercy-framework-pre/resources
-      dest: ./resources
-
-    - action: download_file
-      url: https://github.com/Mercy-Collective/mercy-framework/archive/refs/tags/Pre.zip
-      path: ./tmp/mercy-framework-pre.zip
-
-    - action: unzip
-      src: ./tmp/mercy-framework-pre.zip
-      dest: ./tmp
-
-    - action: move_path
-      src: ./tmp/mercy-framework-pre/cfg
-      dest: ./cfg
-
+    # Base Files
     - action: download_github
       src: https://github.com/Mercy-Collective/mercy-framework-recipe/
       ref: main
@@ -43,9 +20,49 @@ tasks:
       src: ./tmp/mercy-framework-pre/logo.png
       dest: ./logo.png
 
+    # Database
     - action: connect_database
     - action: query_database
       file: ./tmp/mercy-framework-pre/frameworkdb.sql
+
+    # Resources
+    - action: download_file
+      path: ./tmp/mercy-framework-pre.zip
+      url: https://github.com/Mercy-Collective/mercy-framework/archive/refs/tags/Pre.zip
+    - action: unzip
+      dest: ./tmp
+      src: ./tmp/mercy-framework-pre.zip
+
+    - action: move_path
+      src: ./tmp/mercy-framework-pre/resources
+      dest: ./resources
+
+    - action: download_file
+      path: ./tmp/mercy-framework-pre.zip
+      url: https://github.com/Mercy-Collective/mercy-framework/archive/refs/tags/Pre.zip
+    - action: unzip
+      src: ./tmp/mercy-framework-pre.zip
+      dest: ./tmp
+
+    # Move CFG Folder
+    - action: move_path
+      src: ./tmp/mercy-framework-pre/cfg
+      dest: ./cfg
+
+    # Move Voice Server
+    - action: move_path
+      src: ./tmp/mercy-framework-pre/Mercy-VoiceServer
+      dest: ./
+
+    # Move Casino Wheel
+    - action: move_path
+      src: ./tmp/mercy-framework-pre/Mercy-CasinoWheelUI
+      dest: ./
+
+    # Move Starter
+    - action: move_path
+      src: ./tmp/mercy-framework-pre/[Starter].bat
+      dest: ./
 
     - action: remove_path
       path: ./tmp
