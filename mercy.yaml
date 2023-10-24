@@ -31,7 +31,7 @@ tasks:
 
     - action: download_file
       url: https://raw.githubusercontent.com/Mercy-Collective/mercy-framework/main/cfg/server.cfg
-      path: ./server.cfg
+      path: ./cfg/server.cfg
 
     - action: connect_database
     - action: query_database
