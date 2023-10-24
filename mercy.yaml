@@ -39,8 +39,8 @@ tasks:
 
     # Move CFG Folder
     - action: move_path
-      src: ./tmp/mercy-framework-pre/cfg
-      dest: ./cfg
+      src: ./tmp/mercy-framework-pre/cfg/resources.cfg
+      dest: ./resources.cfg
     # Move Voice Server
     - action: move_path
       src: ./tmp/mercy-framework-pre/Mercy-VoiceServer
