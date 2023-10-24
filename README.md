@@ -17,6 +17,8 @@ Official txAdmin Recipe for the Mercy Framework
     - OneSync Settings: Enable onesync legacy or infinity
 12. Enjoy!
 
+## Credits
+Thanks to ICE for the recipe.
 
 
    
