@@ -15,10 +15,6 @@ Official txAdmin Recipe for the Mercy Framework
 11. Note: Make sure to do following things before joining the server:
     - txAdmin Settings (Parameters): `+set sv_enforceGameBuild 2944`
     - txAdmin Settings (OneSync): Enable onesync legacy or infinity
-    - mysql.cfg: Change the database connection settings.
-    - keys.cfg: Input a fivem license key and steam web api key (https://steamcommunity.com/dev/apikey)
-    - admins.cfg: Add yourself as admin.
-    - settings.cfg: Change server name and other settings.
 12. Enjoy!
 
 # Support
@@ -26,7 +22,7 @@ Need help?
 Join our discord here: https://dsc.gg/mercy-coll
 
 ## Credits
-Thanks to ICE for the recipe.
+Thanks to ICE for helping with the recipe.
 
 
    
