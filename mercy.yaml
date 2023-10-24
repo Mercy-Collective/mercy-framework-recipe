@@ -37,32 +37,21 @@ tasks:
       src: ./tmp/mercy-framework-pre/resources
       dest: ./resources
 
-    - action: download_file
-      path: ./tmp/mercy-framework-pre.zip
-      url: https://github.com/Mercy-Collective/mercy-framework/archive/refs/tags/Pre.zip
-    - action: unzip
-      src: ./tmp/mercy-framework-pre.zip
-      dest: ./tmp
-
     # Move CFG Folder
     - action: move_path
       src: ./tmp/mercy-framework-pre/cfg
       dest: ./cfg
-
     # Move Voice Server
     - action: move_path
       src: ./tmp/mercy-framework-pre/Mercy-VoiceServer
-      dest: ./Mercy-VoiceServer
-
+      dest: ./Mercy-VoiceServer/
     # Move Casino Wheel
     - action: move_path
       src: ./tmp/mercy-framework-pre/Mercy-CasinoWheelUI
-      dest: ./Mercy-CasinoWheelUI
-
+      dest: ./Mercy-CasinoWheelUI/
     # Move Starter
     - action: move_path
       src: ./tmp/mercy-framework-pre/[Starter].bat
       dest: ./[Starter].bat
-
     - action: remove_path
       path: ./tmp
