@@ -52,17 +52,17 @@ tasks:
     # Move Voice Server
     - action: move_path
       src: ./tmp/mercy-framework-pre/Mercy-VoiceServer
-      dest: ./
+      dest: ./Mercy-VoiceServer
 
     # Move Casino Wheel
     - action: move_path
       src: ./tmp/mercy-framework-pre/Mercy-CasinoWheelUI
-      dest: ./
+      dest: ./Mercy-CasinoWheelUI
 
     # Move Starter
     - action: move_path
       src: ./tmp/mercy-framework-pre/[Starter].bat
-      dest: ./
+      dest: ./[Starter].bat
 
     - action: remove_path
       path: ./tmp
