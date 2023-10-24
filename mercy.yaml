@@ -10,20 +10,20 @@ tasks:
     - action: download_github
       src: https://github.com/Mercy-Collective/mercy-framework-recipe/
       ref: main
-      dest: ./tmp/mercy-framework
+      dest: ./tmp/mercy-recipe
 
     - action: move_path
-      src: ./tmp/mercy-framework/server.cfg
+      src: ./tmp/mercy-recipe/server.cfg
       dest: ./server.cfg
 
     - action: move_path
-      src: ./tmp/mercy-framework/logo.png
+      src: ./tmp/mercy-recipe/logo.png
       dest: ./logo.png
 
     # Database
     - action: connect_database
     - action: query_database
-      file: ./tmp/mercy-framework/frameworkdb.sql
+      file: ./tmp/mercy-recipe/frameworkdb.sql
 
     # Resources
     - action: download_file
@@ -33,10 +33,10 @@ tasks:
       dest: ./tmp
       src: ./tmp/mercy-framework-pre.zip
 
+    # Move Resources
     - action: move_path
       src: ./tmp/mercy-framework-pre/resources
       dest: ./resources
-
     # Move CFG Folder
     - action: move_path
       src: ./tmp/mercy-framework-pre/cfg/resources.cfg
