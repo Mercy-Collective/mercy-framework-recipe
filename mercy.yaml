@@ -28,7 +28,7 @@ tasks:
     # Resources
     - action: download_file
       path: ./tmp/mercy-framework-pre.zip
-      url: https://github.com/Mercy-Collective/mercy-framework/archive/refs/tags/Pre.zip
+      url: https://github.com/Mercy-Collective/mercy-framework/archive/refs/tags/Pre2.zip
     - action: unzip
       dest: ./tmp
       src: ./tmp/mercy-framework-pre.zip
