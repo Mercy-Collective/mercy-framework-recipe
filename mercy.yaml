@@ -61,11 +61,6 @@ tasks:
   - action: unzip
     dest: ./resources/[standalone]
     src: ./tmp/files/oxmysql.zip
-
-  - action: download_github
-    dest: ./resources/[standalone]/PolyZone
-    ref: master
-    src: https://github.com/mkafrin/PolyZone
 	
   - action: download_github
     dest: ./resources/[standalone]/screenshot-basic
@@ -312,7 +307,12 @@ tasks:
     dest: ./resources/[mercy]/mercy-weathersync
     ref: main
     src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-weathersync
-	
+
+  - action: download_github
+    dest: ./resources/[mercy]/mercy-polyzone
+    ref: main
+    src: https://github.com/Mercy-Collective/mercy-framework/tree/main/resources/%5Bmercy%5D/mercy-polyzone
+ 
 	# Clean up
 	- action: remove_path
 	path: ./tmp
