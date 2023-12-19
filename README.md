@@ -23,7 +23,7 @@ Need help?
 Join our discord here: https://dsc.gg/mercy-coll
 
 ## Credits
-Thanks to ICE for helping with the recipe.
+Thanks to ICE & @bicatcho11 for helping with the recipe.
 
 
    
