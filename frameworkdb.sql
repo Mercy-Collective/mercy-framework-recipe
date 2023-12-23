@@ -60,18 +60,17 @@ CREATE TABLE IF NOT EXISTS `mdw_announcements` (
   `text` mediumtext DEFAULT NULL,
   `created` bigint(255) DEFAULT floor(unix_timestamp(current_timestamp(3)) * 1000),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
 
 CREATE TABLE IF NOT EXISTS `mdw_evidences` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `type` varchar(50) DEFAULT NULL,
   `identifier` text DEFAULT NULL,
   `description` text DEFAULT NULL,
-  `scums` longtext DEFAULT NULL,
-  `evidence` longtext DEFAULT NULL,
   `reportid` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=514592 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 CREATE TABLE IF NOT EXISTS `mdw_legislation` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -79,21 +78,21 @@ CREATE TABLE IF NOT EXISTS `mdw_legislation` (
   `content` text DEFAULT NULL,
   `created` bigint(255) DEFAULT floor(unix_timestamp(current_timestamp(3)) * 1000),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 CREATE TABLE IF NOT EXISTS `mdw_profiles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `citizenid` varchar(50) DEFAULT NULL,
   `name` varchar(50) DEFAULT NULL,
   `image` text DEFAULT NULL,
-  `notes` text DEFAULT NULL,
-  `tags` text DEFAULT NULL,
-  `priors` text DEFAULT NULL,
-  `charges` text DEFAULT NULL,
+  `notes` text DEFAULT '',
+  `tags` text DEFAULT '[]',
+  `priors` text DEFAULT '[]',
+  `charges` text DEFAULT '[]',
   `wanted` varchar(50) DEFAULT 'False',
   `created` bigint(255) DEFAULT floor(unix_timestamp(current_timestamp(3)) * 1000),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 CREATE TABLE IF NOT EXISTS `mdw_reports` (
   `report` int(11) NOT NULL AUTO_INCREMENT,
@@ -108,10 +107,10 @@ CREATE TABLE IF NOT EXISTS `mdw_reports` (
   `evidences` varchar(50) DEFAULT '[]',
   `created` bigint(255) DEFAULT floor(unix_timestamp(current_timestamp(3)) * 1000),
   PRIMARY KEY (`report`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 CREATE TABLE IF NOT EXISTS `mdw_staff` (
-  `id` int(11) DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `citizenid` varchar(50) DEFAULT NULL,
   `name` varchar(50) DEFAULT NULL,
   `rank` varchar(50) DEFAULT NULL,
@@ -119,9 +118,10 @@ CREATE TABLE IF NOT EXISTS `mdw_staff` (
   `notes` text DEFAULT NULL,
   `callsign` varchar(50) DEFAULT NULL,
   `department` varchar(50) DEFAULT NULL,
-  `tags` text DEFAULT NULL,
-  `created` bigint(20) DEFAULT floor(unix_timestamp(current_timestamp(3)) * 1000)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `tags` text DEFAULT '[]',
+  `created` bigint(20) DEFAULT floor(unix_timestamp(current_timestamp(3)) * 1000),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 CREATE TABLE IF NOT EXISTS `mdw_warrants` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -130,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `mdw_warrants` (
   `mugshot` text NOT NULL,
   `expires` bigint(20) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 CREATE TABLE IF NOT EXISTS `players` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
