@@ -31,9 +31,6 @@ tasks:
     ref: main
     src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/cfg/resources.cfg
 
-  - action: waste_time # prevent github throttling
-    seconds: 10
-
   # Download Voice Server
   - action: download_github
     dest: ./Mercy-VoiceServer/
@@ -82,7 +79,7 @@ tasks:
 	
   - action: download_github
     dest: ./resources/[standalone]/screenshot-basic
-    ref: main
+    ref: master
     src: https://github.com/citizenfx/screenshot-basic
 
   - action: download_github
@@ -145,6 +142,9 @@ tasks:
     ref: main
     src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-bennys
 	
+  - action: waste_time # prevent github throttling
+    seconds: 10
+
   - action: download_github
     dest: ./resources/[mercy]/mercy-business
     ref: main
@@ -175,9 +175,6 @@ tasks:
     ref: main
     src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-clothing
 	
-  - action: waste_time # prevent github throttling
-    seconds: 10
-	
   - action: download_github
     dest: ./resources/[mercy]/mercy-doors
     ref: main
@@ -187,6 +184,9 @@ tasks:
     dest: ./resources/[mercy]/mercy-financials
     ref: main
     src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-financials
+
+  - action: waste_time # prevent github throttling
+    seconds: 10
 
   - action: download_github
     dest: ./resources/[mercy]/mercy-grapple
@@ -228,6 +228,9 @@ tasks:
     ref: main
     src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-items
 	
+  - action: waste_time # prevent github throttling
+    seconds: 10
+
   - action: download_github
     dest: ./resources/[mercy]/mercy-jobs
     ref: main
@@ -253,8 +256,6 @@ tasks:
     ref: main
     src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-misc
 
-  - action: waste_time # prevent github throttling
-    seconds: 10
 
   - action: download_github
     dest: ./resources/[mercy]/mercy-pdm
@@ -271,6 +272,9 @@ tasks:
     ref: main
     src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-police
 	
+  - action: waste_time # prevent github throttling
+    seconds: 10
+
   - action: download_github
     dest: ./resources/[mercy]/mercy-polyzone
     ref: main
