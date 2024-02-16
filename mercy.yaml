@@ -25,25 +25,26 @@ tasks:
   - action: query_database
     file: ./tmp/mercy-recipe/frameworkdb.sql
 
-  # Move Resources
-  - action: move_path
-    src: ./tmp/mercy-framework-pre/resources
-    dest: ./resources
-  # Move CFG Folder
-  - action: move_path
-    src: ./tmp/mercy-framework-pre/cfg/resources.cfg
+  # Download Resources.cfg
+  - action: download_github
     dest: ./resources.cfg
-  # Move Voice Server
-  - action: move_path
-    src: ./tmp/mercy-framework-pre/Mercy-VoiceServer
+    ref: main
+    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/cfg/resources.cfg
+
+  - action: waste_time # prevent github throttling
+    seconds: 10
+
+  # Download Voice Server
+  - action: download_github
     dest: ./Mercy-VoiceServer/
-  # Move Casino Wheel
-  - action: move_path
-    src: ./tmp/mercy-framework-pre/Mercy-CasinoWheelUI
+    ref: main
+    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/Mercy-VoiceServer
+  
+  # Download Casino Wheel
+  - action: download_github
     dest: ./Mercy-CasinoWheelUI/
-  # Remove Temp Files
-  - action: remove_path
-    path: ./tmp
+    ref: main
+    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/Mercy-CasinoWheelUI
 
   # ESSENTIALS
 
