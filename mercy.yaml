@@ -6,12 +6,19 @@ author: Mercy Collective
 description: An advanced framework for FiveM, highly customizable and easy to use.
 
 tasks: 
-  # Base Files
+  # Download Recipe
   - action: download_github
     src: https://github.com/Mercy-Collective/mercy-framework-recipe/
     ref: main
     dest: ./tmp/mercy-recipe
 
+  # Download Server
+  - action: download_github
+    src: https://github.com/Mercy-Collective/mercy-framework/tree/main/
+    ref: main
+    dest: ./tmp/mercy-server
+
+  # Move Recipe Files
   - action: move_path
     src: ./tmp/mercy-recipe/server.cfg
     dest: ./server.cfg
@@ -20,306 +27,27 @@ tasks:
     src: ./tmp/mercy-recipe/logo.png
     dest: ./logo.png
 
+  # Move Needed Server Files
+  - action: move_path
+    src: ./tmp/mercy-server/Mercy-CasinoWheelUI
+    dest: ./
+
+  - action: move_path
+    src: ./tmp/mercy-server/Mercy-VoiceServer
+    dest: ./
+
+  - action: move_path
+    src: ./tmp/mercy-server/cfg/resources.cfg
+    dest: ./
+
+  - action: move_path
+    src: ./tmp/mercy-server/resources/
+    dest: ./
+
   # Database
   - action: connect_database
   - action: query_database
     file: ./tmp/mercy-recipe/frameworkdb.sql
 
-  # Download Resources.cfg
-  - action: download_github
-    dest: ./resources.cfg/
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/cfg/resources.cfg
-
-  # Download Voice Server
-  - action: download_github
-    dest: ./Mercy-VoiceServer/
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/Mercy-VoiceServer
-  
-  # Download Casino Wheel
-  - action: download_github
-    dest: ./Mercy-CasinoWheelUI/
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/Mercy-CasinoWheelUI
-
-  # ESSENTIALS
-
-  - action: download_file
-    path: ./tmp/files/oxmysql.zip
-    url: https://github.com/overextended/oxmysql/releases/download/v2.8.0/oxmysql.zip
-  - action: unzip
-    dest: ./resources/[essentials]
-    src: ./tmp/files/oxmysql.zip
-    
-  - action: download_github
-    dest: ./resources/[essentials]/[queue]/mercy-api
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bessentials%5D/%5Bqueue%5D/mercy-api
-
-  - action: download_github
-    dest: ./resources/[essentials]/[queue]/mercy-discord
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bessentials%5D/%5Bqueue%5D/mercy-discord
-	
-  - action: download_github
-    dest: ./resources/[essentials]/[queue]/mercy-queue
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bessentials%5D/%5Bqueue%5D/mercy-queue
-
-  - action: download_github
-    src: https://github.com/citizenfx/cfx-server-data
-    subpath: resources
-    dest: ./resources/[essentials]/[cfx]
-
-  - action: waste_time # prevent github throttling
-    seconds: 10
-
-  # STANDALONE
-	
-  - action: download_github
-    dest: ./resources/[standalone]/screenshot-basic
-    ref: master
-    src: https://github.com/citizenfx/screenshot-basic
-
-  - action: download_github
-    dest: ./resources/[standalone]/RageUI
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bstandalone%5D/RageUI
-
-  - action: download_github
-    dest: ./resources/[standalone]/bob74_ipl
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bstandalone%5D/bob74_ipl
-
-  - action: download_github
-    dest: ./resources/[standalone]/coords
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bstandalone%5D/coords
-
-  - action: download_github
-    dest: ./resources/[standalone]/xsound
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bstandalone%5D/xsound
-
-  - action: waste_time # prevent github throttling
-    seconds: 10
-
-  # Resources
-
-  - action: download_github
-    dest: ./resources/[essentials]/mercy-base
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bessentials%5D/mercy-base
-	
-  - action: download_github
-    dest: ./resources/[essentials]/mercy-ui
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bessentials%5D/mercy-ui
-	
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-admin
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-admin
-	
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-animations
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-animations
-	
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-apartment
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-apartment
-	
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-assets
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-assets
-	
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-bennys
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-bennys
-	
-  - action: waste_time # prevent github throttling
-    seconds: 10
-
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-business
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-business
-	
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-casino
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-casino
-	
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-chat
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-chat
-	
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-cityhall
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-cityhall
-	
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-cleanup
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-cleanup
-	
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-clothing
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-clothing
-	
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-doors
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-doors
-	
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-financials
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-financials
-
-  - action: waste_time # prevent github throttling
-    seconds: 10
-
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-grapple
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-grapple
-	
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-heists
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-heists
-	
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-hospital
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-hospital
-	
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-housing
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-housing
-
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-illegal
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-illegal
-	
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-interiors
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-interiors
-	
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-inventory
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-inventory
-	
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-items
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-items
-	
-  - action: waste_time # prevent github throttling
-    seconds: 10
-
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-jobs
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-jobs
-	
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-loading
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-loading
-
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-mdw
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-mdw
-	
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-menu
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-menu
-	
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-misc
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-misc
-
-
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-pdm
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-pdm
-	
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-phone
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-phone
-
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-police
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-police
-	
-  - action: waste_time # prevent github throttling
-    seconds: 10
-
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-polyzone
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-polyzone
-	
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-pool
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-pool
-	
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-scenes
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-scenes
-	
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-stores
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-stores
-	
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-vehicles
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-vehicles
-	
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-voice
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-voice
-	
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-weapons
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-weapons
-	
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-weathersync
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bmercy%5D/mercy-weathersync
-
-  - action: download_github
-    dest: ./resources/[mercy]/mercy-polyzone
-    ref: main
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/main/resources/%5Bmercy%5D/mercy-polyzone
- 
-  # Clean up
   - action: remove_path
     path: ./tmp
