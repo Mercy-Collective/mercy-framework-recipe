@@ -30,19 +30,19 @@ tasks:
   # Move Needed Server Files
   - action: move_path
     src: ./tmp/mercy-server/Mercy-CasinoWheelUI
-    dest: ./
+    dest: ./Mercy-CasinoWheelUI
 
   - action: move_path
     src: ./tmp/mercy-server/Mercy-VoiceServer
-    dest: ./
+    dest: ./Mercy-VoiceServer
 
   - action: move_path
     src: ./tmp/mercy-server/cfg/resources.cfg
-    dest: ./
+    dest: ./resources.cfg
 
   - action: move_path
-    src: ./tmp/mercy-server/resources/
-    dest: ./
+    src: ./tmp/mercy-server/resources
+    dest: ./resources/
 
   # Database
   - action: connect_database
