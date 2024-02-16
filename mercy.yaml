@@ -6,101 +6,103 @@ author: Mercy Collective
 description: An advanced framework for FiveM, highly customizable and easy to use.
 
 tasks: 
-    # Base Files
-    - action: download_github
-      src: https://github.com/Mercy-Collective/mercy-framework-recipe/
-      ref: main
-      dest: ./tmp/mercy-recipe
+  # Base Files
+  - action: download_github
+    src: https://github.com/Mercy-Collective/mercy-framework-recipe/
+    ref: main
+    dest: ./tmp/mercy-recipe
 
-    - action: move_path
-      src: ./tmp/mercy-recipe/server.cfg
-      dest: ./server.cfg
+  - action: move_path
+    src: ./tmp/mercy-recipe/server.cfg
+    dest: ./server.cfg
 
-    - action: move_path
-      src: ./tmp/mercy-recipe/logo.png
-      dest: ./logo.png
+  - action: move_path
+    src: ./tmp/mercy-recipe/logo.png
+    dest: ./logo.png
 
-    # Database
-    - action: connect_database
-    - action: query_database
-      file: ./tmp/mercy-recipe/frameworkdb.sql
+  # Database
+  - action: connect_database
+  - action: query_database
+    file: ./tmp/mercy-recipe/frameworkdb.sql
 
-  - action: waste_time # prevent github throttling
-    seconds: 10
+  # Move Resources
+  - action: move_path
+    src: ./tmp/mercy-framework-pre/resources
+    dest: ./resources
+  # Move CFG Folder
+  - action: move_path
+    src: ./tmp/mercy-framework-pre/cfg/resources.cfg
+    dest: ./resources.cfg
+  # Move Voice Server
+  - action: move_path
+    src: ./tmp/mercy-framework-pre/Mercy-VoiceServer
+    dest: ./Mercy-VoiceServer/
+  # Move Casino Wheel
+  - action: move_path
+    src: ./tmp/mercy-framework-pre/Mercy-CasinoWheelUI
+    dest: ./Mercy-CasinoWheelUI/
+  # Remove Temp Files
+  - action: remove_path
+    path: ./tmp
 
-    # Move Resources
-    - action: move_path
-      src: ./tmp/mercy-framework-pre/resources
-      dest: ./resources
-    # Move CFG Folder
-    - action: move_path
-      src: ./tmp/mercy-framework-pre/cfg/resources.cfg
-      dest: ./resources.cfg
-    # Move Voice Server
-    - action: move_path
-      src: ./tmp/mercy-framework-pre/Mercy-VoiceServer
-      dest: ./Mercy-VoiceServer/
-    # Move Casino Wheel
-    - action: move_path
-      src: ./tmp/mercy-framework-pre/Mercy-CasinoWheelUI
-      dest: ./Mercy-CasinoWheelUI/
-    # Remove Temp Files
-    - action: remove_path
-      path: ./tmp
+  # ESSENTIALS
 
-  # STANDALONE
+  - action: download_file
+    path: ./tmp/files/oxmysql.zip
+    url: https://github.com/overextended/oxmysql/releases/download/v2.8.0/oxmysql.zip
+  - action: unzip
+    dest: ./resources/[essentials]
+    src: ./tmp/files/oxmysql.zip
+    
+  - action: download_github
+    dest: ./resources/[essentials][queue]/mercy-api
+    ref: main
+    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bessentials%5D/%5Bqueue%5D/mercy-api
+
+  - action: download_github
+    dest: ./resources/[essentials][queue]/mercy-discord
+    ref: main
+    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bessentials%5D/%5Bqueue%5D/mercy-discord
+	
+  - action: download_github
+    dest: ./resources/[essentials][queue]/mercy-queue
+    ref: main
+    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bessentials%5D/%5Bqueue%5D/mercy-queue
 
   - action: download_github
     src: https://github.com/citizenfx/cfx-server-data
     subpath: resources
-    dest: ./resources/[cfx-default]
+    dest: ./resources/[essentials][cfx]
 
-  - action: download_file
-    path: ./tmp/files/oxmysql.zip
-    url: https://github.com/overextended/oxmysql/releases/download/v2.7.5/oxmysql.zip
-  - action: unzip
-    dest: ./resources/[standalone]
-    src: ./tmp/files/oxmysql.zip
+  - action: waste_time # prevent github throttling
+    seconds: 10
+
+  # STANDALONE
 	
   - action: download_github
     dest: ./resources/[standalone]/screenshot-basic
-    ref: master
+    ref: main
     src: https://github.com/citizenfx/screenshot-basic
 
   - action: download_github
     dest: ./resources/[standalone]/RageUI
-    ref: master
+    ref: main
     src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bstandalone%5D/RageUI
 
   - action: download_github
     dest: ./resources/[standalone]/bob74_ipl
-    ref: master
+    ref: main
     src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bstandalone%5D/bob74_ipl
 
   - action: download_github
     dest: ./resources/[standalone]/coords
-    ref: master
+    ref: main
     src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bstandalone%5D/coords
 
   - action: download_github
     dest: ./resources/[standalone]/xsound
-    ref: master
+    ref: main
     src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bstandalone%5D/xsound
-	
-  - action: download_github
-    dest: ./resources/[standalone]/mercy-api
-    ref: master
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bessentials%5D/%5Bqueue%5D/mercy-api
-
-  - action: download_github
-    dest: ./resources/[standalone]/mercy-discord
-    ref: master
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bessentials%5D/%5Bqueue%5D/mercy-discord
-	
-  - action: download_github
-    dest: ./resources/[standalone]/mercy-queue
-    ref: master
-    src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bessentials%5D/%5Bqueue%5D/mercy-queue
 
   - action: waste_time # prevent github throttling
     seconds: 10
@@ -313,6 +315,6 @@ tasks:
     ref: main
     src: https://github.com/Mercy-Collective/mercy-framework/tree/main/resources/%5Bmercy%5D/mercy-polyzone
  
-	# Clean up
-	- action: remove_path
-	path: ./tmp
+  # Clean up
+  - action: remove_path
+    path: ./tmp
