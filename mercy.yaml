@@ -27,7 +27,7 @@ tasks:
 
   # Download Resources.cfg
   - action: download_github
-    dest: ./resources.cfg
+    dest: ./resources.cfg/
     ref: main
     src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/cfg/resources.cfg
 
@@ -53,24 +53,24 @@ tasks:
     src: ./tmp/files/oxmysql.zip
     
   - action: download_github
-    dest: ./resources/[essentials][queue]/mercy-api
+    dest: ./resources/[essentials]/[queue]/mercy-api
     ref: main
     src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bessentials%5D/%5Bqueue%5D/mercy-api
 
   - action: download_github
-    dest: ./resources/[essentials][queue]/mercy-discord
+    dest: ./resources/[essentials]/[queue]/mercy-discord
     ref: main
     src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bessentials%5D/%5Bqueue%5D/mercy-discord
 	
   - action: download_github
-    dest: ./resources/[essentials][queue]/mercy-queue
+    dest: ./resources/[essentials]/[queue]/mercy-queue
     ref: main
     src: https://github.com/Mercy-Collective/mercy-framework/tree/38e302f66420666830b20c8d1e2f7cb178fde536/resources/%5Bessentials%5D/%5Bqueue%5D/mercy-queue
 
   - action: download_github
     src: https://github.com/citizenfx/cfx-server-data
     subpath: resources
-    dest: ./resources/[essentials][cfx]
+    dest: ./resources/[essentials]/[cfx]
 
   - action: waste_time # prevent github throttling
     seconds: 10
